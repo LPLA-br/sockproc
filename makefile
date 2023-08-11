@@ -1,0 +1,30 @@
+#NOME DO PROJETO
+PROJ_NAME=soquetes
+
+#COMPILADOR
+CC=gcc
+
+#FLAGS DO COMPILADOR (vide manual do compilador)
+CC_FLAGS=-O0		\
+
+# CÓDIGOS FONTE
+SERVIDOR= cliente.c
+CLIENTE= servidor.c
+
+# EXECUTAVEIS
+ELF_CLIENTE= cliente
+ELF_SERVIDOR= servidor
+
+#COMPILAÇÃO FINAL
+
+cliente:
+	$(CC) $(CLIENTE) -o $(ELF_CLIENTE) $(CC_FLAGS)
+
+servidor:
+	$(CC) $(SERVIDOR) -o $(ELF_SERVIDOR) $(CC_FLAGS)
+
+
+# REMOÇÃO DO RESULTADO DA COMPILAÇÃO
+
+clean:
+	rm  $(ELF_CLIENTE) $(ELF_SERVIDOR)
